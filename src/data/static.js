@@ -17,7 +17,7 @@ export const MENU_ITEMS = [
     { name: 'Home', link: '/home' },
     { name: 'News', link: '/news' },
     { name: 'Teams', link: '/teams' },
-    { name: 'Fixtures', link: '/fixtures' },
+    { name: 'Fixtures', link: '/fixtures' ,submenu: [{name: "Create Fixtures",link: '/createFixtures' },{name: "List Fixtures",link: '/listFixtures' }]},
     { name: 'Results', link: '/results' },
     { name: 'Players', link: '/players' },
     { name: 'Gallery', link: '/gallery' },
@@ -365,3 +365,29 @@ export const SAMPLE_MSG1 = [
 
 //Table constants
 export  const TABLE_SIZE = 10
+
+
+
+export const CREATE_FIXTURES = [
+    {
+        name: "First Name",
+        type: "text",
+        id: "firstName",
+        placeholder: "Please Enter First name",
+    },  {
+        name: "Last Name",
+        type: "text",
+        id: "lastName",
+        placeholder: "Please Enter Last name",
+    },  {
+        name: "Email",
+        type: "text",
+        id: "email",
+        placeholder: "Please Enter Email name",
+    },  {
+        name: "Phone Number",
+        type: "number",
+        id: "phoneNumber",
+        placeholder: "Please Enter Phone Number",
+    }
+]

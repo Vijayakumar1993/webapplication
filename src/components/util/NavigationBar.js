@@ -32,13 +32,38 @@ export default class CommonNavbar extends React.Component {
                     {/* Navigation Menu */}
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            {menus.map((item, index) => (
-                                <li className="nav-item" key={index}>
-                                    <Link className="nav-link" to={item.link}>
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
+                            {menus.map((item, index) => {
+                                if (item.submenu) {
+                                   return <li className="nav-item dropdown" key={index}>
+                                        <a
+                                            className="nav-link dropdown-toggle"
+                                            href="#"
+                                            id={`dropdown${index}`}
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                        >
+                                            {item.name}
+                                        </a>
+                                        <ul className="dropdown-menu" aria-labelledby={`dropdown${index}`}>
+                                            {item.submenu.map((subItem, subIndex) => (
+                                                <li key={subIndex}>
+                                                    <Link className="dropdown-item" to={subItem.link}>
+                                                        {subItem.name}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </li>
+                                } else {
+                                    return <li className="nav-item" key={index}>
+                                        <Link className="nav-link" to={item.link}>
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                }
+                            })}
+
                         </ul>
 
                         {/* Right-Aligned User Info */}
