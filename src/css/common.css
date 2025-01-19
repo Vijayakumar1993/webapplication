@@ -1,0 +1,62 @@
+
+.width-thirty {
+    width: 30%;
+}
+
+.padding-bottom-ten{
+    padding-bottom: 10px;
+}
+
+.padding{
+    padding: 2px;
+}
+
+.margin-top-10{
+    margin-top: 10%;
+}
+
+.margin-bottom-1-per{
+    margin-bottom: 1%;
+}
+
+.primary{
+    background: #2c2c68;
+    color: white;
+}
+
+.padding-left-35px{
+    padding-left: 35px;
+}
+.padding-right-35px{
+    padding-right: 35px;
+}
+.white{
+    color: white;
+}
+.transparent{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.center{
+    align-items: center;
+}
+.page-bottom{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+}
+.image_rainy{
+    background-image: url('../../public/images/index.jpg');
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    background-size: cover; /* Scale the image to cover the entire screen */
+    background-repeat: no-repeat; /* Prevent tiling */
+    height: 100vh; /* Set the height to the full viewport height */
+    width: 100vw; /* Set the width to the full viewport width */
+    overflow: hidden; /* Prevent scrolling */
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+  }
