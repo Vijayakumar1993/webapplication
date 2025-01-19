@@ -37,6 +37,11 @@
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.header{
+    color: white !important;
+    background-color: #17a2b8 !important;
+}
+
 .center{
     align-items: center;
 }

@@ -61,13 +61,12 @@ export default class Table extends React.Component {
     }
 
     render() {
-        console.log("re-render triggered...!")
         var { heading, rows, pagination } = this.state;
         var colspan = parseInt(heading.length/2)
         rows = rows.filter((r, index) => pagination.from <= index && pagination.to > index)
         return (
             <><div className="container mt-4 padding-left-35px padding-right-35px">
-                <table className="table table-striped table-bordered">
+                <table className="table table-hover table-sm table-responsive">
                     <thead className="thead-dark">
                         <TabelHeading rows={heading} />
                     </thead>
@@ -83,16 +82,16 @@ export default class Table extends React.Component {
                             </td>
                             <td colspan={colspan} class="text-end">
                                 <span className="padding">
-                                    <button className="padding btn btn-primary btn-sm" onClick={() => this.toStart()}>&nbsp;&lt;&lt;&nbsp;</button>
+                                    <button className="padding btn header btn-sm" onClick={() => this.toStart()}>&nbsp;&lt;&lt;&nbsp;</button>
                                 </span>
                                 <span className="padding">
-                                    <button className="padding btn btn-primary btn-sm"  onClick={() => this.prev()}>&nbsp;&lt;&nbsp;</button>
+                                    <button className="padding btn header btn-sm"  onClick={() => this.prev()}>&nbsp;&lt;&nbsp;</button>
                                 </span> <input type="text" placeholder="Page No?" value={pagination.index}  onChange={(event) => this.onPageNumChange(event)} />
                                 <span className="padding">
-                                    <button className="padding btn btn-primary btn-sm" onClick={() => this.next()}>&nbsp;&gt;&nbsp;</button>
+                                    <button className="padding btn header btn-sm" onClick={() => this.next()}>&nbsp;&gt;&nbsp;</button>
                                 </span>
                                 <span className="padding">
-                                    <button className="padding btn btn-primary btn-sm" onClick={() => this.toEnd()}>&nbsp;&gt;&gt;&nbsp;</button>
+                                    <button className="padding btn header btn-sm" onClick={() => this.toEnd()}>&nbsp;&gt;&gt;&nbsp;</button>
                                 </span>
                             </td>
                         </tr>
@@ -107,7 +106,7 @@ export default class Table extends React.Component {
 function TabelHeading(props) {
     return (
         <tr>
-            {props.rows.map((row, index) => <th key={index}>{row.toUpperCase()}</th>)}
+            {props.rows.map((row, index) => <th className="header" key={index}>{row.toUpperCase()}</th>)}
         </tr>
     )
 }

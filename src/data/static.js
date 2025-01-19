@@ -166,8 +166,20 @@ export const COMPANY = {
     name: "Dynamcis 101 MMA"
 }
 
+export const SAMPLE_MSG =[
+    ["John Doe", "Software Engineer", "New York", "john.doe@example.com"],
+    ["Jane Smith", "Product Manager", "San Francisco", "jane.smith@example.com"],
+    ["Alice Johnson", "Data Analyst", "Seattle", "alice.johnson@example.com"],
+    ["Bob Brown", "UX Designer", "Boston", "bob.brown@example.com"],
+    ["Charlie Davis", "DevOps Engineer", "Austin", "charlie.davis@example.com"],
+    ["Diana Miller", "QA Engineer", "Denver", "diana.miller@example.com"],
+    ["Ethan Wilson", "Backend Developer", "Chicago", "ethan.wilson@example.com"],
+    ["Fiona Moore", "Frontend Developer", "Los Angeles", "fiona.moore@example.com"],
+    ["George Harris", "Project Manager", "Phoenix", "george.harris@example.com"],
+    ["Hannah Clark", "Business Analyst", "Miami", "hannah.clark@example.com"]
+]
 
-export const SAMPLE_MSG = [
+export const SAMPLE_MSG1 = [
     ["21vijayakumar", 22,1234242,"viv2gmailcom."],
     ["2vij2ayakumar", 22,1234242,"viv2gmailcom."],
     ["vija3yakumar", 22,1234242,"viv2gmailcom."],
