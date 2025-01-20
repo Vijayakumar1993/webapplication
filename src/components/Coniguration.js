@@ -1,6 +1,6 @@
 import React from "react";
 import { CONFIGURATION_QUESTIONS } from '../data/static.js';
-import FormGroup from './util/FromGroup'
+import {FormComponent} from './util/FromGroup'
 import CommonNavbar from "./util/NavigationBar.js";
 import Footer from "./util/Footer.js";
 import Panel from "./util/Panel.js";
@@ -18,7 +18,7 @@ class Configuration extends React.Component {
       <div className="container-fluid center">
         {this.state.fields.map((element, index) => {
           return (
-            <FormGroup 
+            <FormComponent 
               key={index} 
               name={element.name} 
               help={element.help} 

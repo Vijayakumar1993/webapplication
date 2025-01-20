@@ -389,5 +389,50 @@ export const CREATE_FIXTURES = [
         type: "number",
         id: "phoneNumber",
         placeholder: "Please Enter Phone Number",
+    },{
+        name: "Gender",
+        type: "radio",
+        id: "gender",
+        value: "Female"
+    },{
+        name: "Gender",
+        type: "radio",
+        id: "gender",
+        value: "Male"
+    },{
+        name: "Are you sure",
+        type: "checkbox",
+        id: "campaignPublish",
+        value: "M"
+    },{
+        name: "Are you sure",
+        type: "checkbox",
+        id: "campaignPublish",
+        value: "M"
+    },{
+        name: "Are you sure",
+        type: "checkbox",
+        id: "campaignPublish",
+        value: "M"
+    },{
+        name: "Are you sure",
+        type: "checkbox",
+        id: "campaignPublish",
+        value: "M"
+    },  {
+        name: "Email",
+        type: "text",
+        id: "email",
+        placeholder: "Please Enter Email name",
+    },  {
+        name: "Email",
+        type: "text",
+        id: "email",
+        placeholder: "Please Enter Email name",
+    },  {
+        name: "Email",
+        type: "text",
+        id: "email",
+        placeholder: "Please Enter Email name",
     }
 ]

@@ -1,5 +1,5 @@
 import React from "react";
-import FormGroup from './util/FromGroup'
+import {FormComponent} from './util/FromGroup'
 import Panel from "./util/Panel";
 import { Button } from "./util/Widgets";
 import {LOGIN_FIELDS} from '../data/static.js'
@@ -12,7 +12,7 @@ class Login extends React.Component {
         const loginForm = <div>
             {this.fields.map(element => {
                 return (<div>
-                    <FormGroup name={element.name} help={element.help} id={element.type}
+                    <FormComponent name={element.name} help={element.help} id={element.type}
                         type={element.type} placeholder={element.placeholder} />
                 </div>)
             })}<Button value="Submit" className="btn btn-success" link="/index"></Button>

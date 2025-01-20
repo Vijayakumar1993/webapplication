@@ -1,34 +1,44 @@
 import React from "react";
-import FormGroup from './FromGroup';
+import { FormComponent,FormCheckbox } from './FromGroup';
 
 class CreateForm extends React.Component {
     constructor(props) {
         super(props);
+        this.submit = this.submit.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
-    submit(){
-        alert("clicked")
+    submit(event) {
+        const { id, value, checked, type,bae } = event.target;
+        this.setState({ [id]: type === "checkbox" ? checked : value });
+    }
+
+    onSubmit(event) {
+        alert(JSON.stringify(this.state))
+        event.preventDefault();
     }
     render() {
         const fields = this.props.fields;
         return (
             <>
                 <form>
+                <div className="col-lg-3 col-md-3">
                     {fields.map((field, index) => {
-                        return (
-                            <FormGroup
-                                key={index}
-                                type={field.type}
-                                id={field.id}
-                                placeholder={field.placeholder}
-                                help={field.help}
-                                name={field.name}
-                                event={this.submit}
-                            />
-                        );
+                        const type = field.type;
+                        switch (type) {
+                            case "text":
+                                return <FormComponent key={index} name={field.name} help={field.help} id={field.id}
+                                    type={field.type} placeholder={field.placeholder} event={this.submit} />;
+                            case "checkbox":
+                                return <FormCheckbox key={index} id={field.id} value={field.value} event={this.submit} name={field.name} type="checkbox"/>;
+                            case "radio":
+                                return <FormCheckbox key={index} id={field.id} value={field.value}  event={this.submit} name={field.name} type="radio"/>;
+                            default: return
+                        }
                     })}
-                    <span className="padding"><button className="btn btn-sm btn-success">Submit</button></span>
+                    <span className="padding"><button className="btn btn-sm btn-success" onClick={() => this.onSubmit()}>Submit</button></span>
                     <span className="padding"><button className="btn btn-sm btn-primary">Reset</button></span>
+                    </div>
                 </form>
             </>
         );
