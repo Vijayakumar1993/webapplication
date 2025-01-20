@@ -14,20 +14,14 @@ export const LOGIN_FIELDS = [
     }
 ]
 export const MENU_ITEMS = [
-    { name: 'Home', link: '/home' },
-    { name: 'News', link: '/news' },
-    { name: 'Teams', link: '/teams' },
-    { name: 'Fixtures', link: '/fixtures' ,submenu: [{name: "Create Fixtures",link: '/createFixtures' },{name: "List Fixtures",link: '/listFixtures' }]},
-    { name: 'Results', link: '/results' },
-    { name: 'Players', link: '/players' },
-    { name: 'Gallery', link: '/gallery' },
-    { name: 'Shop', link: '/shop' },
-    { name: 'Tickets', link: '/tickets' },
-    { name: 'Live Scores', link: '/live-scores' },
-    { name: 'Fan Zone', link: '/fan-zone' },
-    { name: 'Configuration', link: '/configuration' },
-    { name: 'About Us', link: '/about' },
-    { name: 'Contact Us', link: '/contact' },
+    { name: 'Dashboard', link: '/dashboard' },
+    { name: 'Manage Teams', link: '/fan-zone' },
+    { name: 'Manage Players', link: '/configuration' },
+    { name: 'Schedules', link: '/about' },
+    { name: 'Reports', link: '/contact' },
+    { name: 'Settings', link: '/contact' },
+    { name: 'Announcements ', link: '/contact' },
+    { name: 'Feedback & Support', link: '/contact' },
 ];
 
 export const ACTUAL_IMAGS = {
