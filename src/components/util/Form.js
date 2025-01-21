@@ -1,5 +1,6 @@
 import React from "react";
 import { FormComponent,FormCheckbox } from './FromGroup';
+import Autocomplete from "./AutoComplete";
 
 class CreateForm extends React.Component {
     constructor(props) {
@@ -33,6 +34,8 @@ class CreateForm extends React.Component {
                                 return <FormCheckbox key={index} id={field.id} value={field.value} event={this.submit} name={field.name} type="checkbox"/>;
                             case "radio":
                                 return <FormCheckbox key={index} id={field.id} value={field.value}  event={this.submit} name={field.name} type="radio"/>;
+                            case "autocomplete":
+                                return  <Autocomplete key={index} id={field.id} event={this.submit}  suggestions={field.values} placeholder={field.placeholder} />
                             default: return
                         }
                     })}

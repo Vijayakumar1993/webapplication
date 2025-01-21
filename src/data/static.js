@@ -15,7 +15,9 @@ export const LOGIN_FIELDS = [
 ]
 export const MENU_ITEMS = [
     { name: 'Dashboard', link: '/dashboard' },
-    { name: 'Manage Teams', link: '/fan-zone' },
+    { name: 'Manage Teams', link: '/fan-zone',submenu :[{
+        name: 'Create Team', link: '/createTeam'
+    }] },
     { name: 'Manage Players', link: '/configuration' },
     { name: 'Schedules', link: '/about' },
     { name: 'Reports', link: '/contact' },
@@ -429,4 +431,26 @@ export const CREATE_FIXTURES = [
         id: "email",
         placeholder: "Please Enter Email name",
     }
+]
+
+
+//Create team
+export const CREAT_TEAM = [
+    {
+        name: "Team Name",
+        type: "text",
+        id: "teamName",
+        placeholder: "Please Enter First name",
+    },{
+        name: "Team Description",
+        type: "text",
+        id: "description",
+        placeholder: "Please Enter First name",
+    }   ,{
+        name: "auto List",
+        type: "autocomplete",
+        id: "autoList",
+        placeholder:"Enter keyword to search",
+        values: ["vijayakumar","testing","john","ganesh"],
+    }   
 ]

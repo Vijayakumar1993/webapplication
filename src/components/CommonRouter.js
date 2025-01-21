@@ -4,6 +4,7 @@ import Fatel from './Fatel';
 import Login from "./Login";
 import Index from "./Index"
 import Dashboard from "../business/Dashboard";
+import CreateTeam from "../business/CreateTeam";
 
 class CommonRouter extends React.Component {
     constructor() {
@@ -16,6 +17,7 @@ class CommonRouter extends React.Component {
                 <Routes>
                     <Route path="/" Component={Login} />
                     <Route path="/dashboard" Component={Dashboard} />
+                    <Route path="/createTeam" Component={CreateTeam} />
                     <Route path="/logout" Component={Login} />
                     <Route path="*" Component={Fatel} />
                 </Routes>
