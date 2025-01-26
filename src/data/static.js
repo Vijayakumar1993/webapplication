@@ -440,11 +440,20 @@ export const CREAT_TEAM = [
         name: "Team Name",
         type: "text",
         id: "teamName",
+        required: true,
+        placeholder: "Please Enter First name",
+    },{
+        name: "Team Name",
+        type: "text",
+        id: "teamName",
+        required: true,
         placeholder: "Please Enter First name",
     },{
         name: "Team Description",
-        type: "text",
+        type: "checkbox",
+        required: true,    
         id: "description",
+        value: "description",
         placeholder: "Please Enter First name",
     }   ,{
         name: "auto List",
@@ -454,3 +463,14 @@ export const CREAT_TEAM = [
         values: ["vijayakumar","testing","john","ganesh"],
     }   
 ]
+
+//chart options
+export const CHART_DATA = {
+    label: "testing",
+    labels: ["Jan","Feb","March","April"],
+    title: "Monthly sales report",
+    records: [1,2,3,45,33]
+}
+
+export const CHART_COLOR = "rgb(219, 17, 17)"
+export const CHART_BORDER_COLOR = "rgb(219, 17, 17)"

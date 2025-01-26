@@ -28,7 +28,7 @@ const Autocomplete = ({ suggestions,id,placeholder,event }) => {
         <div className="position-relative">
             <input
                 type="text"
-                className="form-control"
+                className="form-control form-control-sm"
                 placeholder={placeholder}
                 value={inputValue}
                 id={id}

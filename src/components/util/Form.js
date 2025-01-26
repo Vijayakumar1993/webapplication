@@ -23,13 +23,13 @@ class CreateForm extends React.Component {
         return (
             <>
                 <form>
-                <div className="col-lg-3 col-md-3">
+                <div className="row">
                     {fields.map((field, index) => {
                         const type = field.type;
                         switch (type) {
                             case "text":
                                 return <FormComponent key={index} name={field.name} help={field.help} id={field.id}
-                                    type={field.type} placeholder={field.placeholder} event={this.submit} />;
+                                    type={field.type} placeholder={field.placeholder} event={this.submit} required={field.required} />;
                             case "checkbox":
                                 return <FormCheckbox key={index} id={field.id} value={field.value} event={this.submit} name={field.name} type="checkbox"/>;
                             case "radio":
@@ -39,8 +39,10 @@ class CreateForm extends React.Component {
                             default: return
                         }
                     })}
-                    <span className="padding"><button className="btn btn-sm btn-success" onClick={() => this.onSubmit()}>Submit</button></span>
-                    <span className="padding"><button className="btn btn-sm btn-primary">Reset</button></span>
+                    </div>
+                    <div className="col-md-12 ">
+                    <span className="padding-right-4px padding-top-4px "><button className="btn btn-sm btn-success" onClick={() => this.onSubmit()}>Submit</button></span>
+                    <span className="padding-right-4px  padding-top-4px "><button className="btn btn-sm btn-primary">Reset</button></span>
                     </div>
                 </form>
             </>
