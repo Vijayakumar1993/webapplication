@@ -42,7 +42,7 @@ class CreateForm extends React.Component {
                     </div>
                     <div className="col-md-12 ">
                     <span className="padding-right-4px padding-top-4px "><button className="btn btn-sm btn-success" onClick={() => this.onSubmit()}>Submit</button></span>
-                    <span className="padding-right-4px  padding-top-4px "><button className="btn btn-sm btn-primary">Reset</button></span>
+                    <span className="padding-right-4px "><button className="btn btn-sm btn-primary">Reset</button></span>
                     </div>
                 </form>
             </>
