@@ -492,11 +492,3 @@ export const ACCORDION_FIEDS = [
         body: "body testing"
     }
 ]
-
-export const LOG_LEVEL = {
-    INFO: "primary",
-    ERROR: "danger",
-    FATAL: "danger",
-    WARNING: "warning",
-    SUCCESS: "success"
-}

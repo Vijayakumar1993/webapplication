@@ -1,5 +1,5 @@
 import React from "react";
-import {log} from "../components/util/Alerts.js";
+import {Log, LogInfo, LogWarning} from "../components/util/Alerts.js";
 import CommonNavbar from "../components/util/NavigationBar.js";
 
 export default class CreateTeam extends React.Component {
@@ -10,6 +10,7 @@ export default class CreateTeam extends React.Component {
     render() {
         return (<>
             <CommonNavbar> </CommonNavbar>
+            <LogWarning msg="welcome"/>
         </>
         )
     }
