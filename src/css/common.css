@@ -84,9 +84,25 @@
 }
 body {
     font-family: "Times New Roman", Times, serif;
+    background-color: #f2f4f7;
   }
 
 .static {
     position: fixed;
     margin-left: 60%;
+}
+
+.box {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1{
+        color: #2c2c68;
+        font-weight: bold;
+}
+a{
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+
 }

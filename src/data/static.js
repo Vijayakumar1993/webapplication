@@ -1,5 +1,7 @@
 import Login from "../components/Login";
 
+
+
 export const LOGIN_FIELDS = [
     {
         name: "Username",
@@ -161,7 +163,8 @@ export const PRODUCTS = [
 ]
 
 export const COMPANY = {
-    name: "Dynamcis 101 MMA"
+    name: "Dynamcis 101 MMA",
+    description: "Dynamcis 101 MMA helps you connect and share with the people in your skills"
 }
 
 export const SAMPLE_MSG = [
@@ -490,5 +493,49 @@ export const ACCORDION_FIEDS = [
     }, {
         header: "testing",
         body: "body testing"
+    }
+]
+
+
+//Registration
+export const REGISTRATION = [
+    {
+        name: "First Name",
+        type: "text",
+        id: "firstName",
+        required: true,
+        placeholder: "Please Enter First name",
+    }, {
+        name: "Last Name",
+        type: "text",
+        id: "lastName",
+        required: true,
+        placeholder: "Please Enter Last name",
+    }, {
+        name: "Gender",
+        type: "radio",
+        required: true,
+        id: "gender",
+        value: "Male",
+        placeholder: "Please Select Gender",
+    }, {
+        name: "Gender",
+        type: "radio",
+        required: true,
+        id: "gender",
+        value: "Female",
+        placeholder: "Please Select Gender",
+    }, {
+        name: "Mobile/Email",
+        type: "text",
+        required: true,
+        id: "mobile",
+        placeholder: "Please Enter Mobile/Email",
+    }, {
+        name: "Password",
+        type: "password",
+        required: true,
+        id: "password",
+        placeholder: "Please Select Password",
     }
 ]

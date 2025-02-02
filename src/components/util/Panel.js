@@ -7,9 +7,9 @@ class Panel extends React.Component {
 
     render() {
         const { heading, body, footer,className } = this.props;
-        const headerClass = "card-header"
+        const headerClass = "card-header primary"
         return (
-            <div className='card'>
+            <div className='card box'>
                 <div className={headerClass}>{heading}</div>
                 <div className="card-body">
                     <p className="card-text">{body}</p>

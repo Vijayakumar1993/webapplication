@@ -30,6 +30,9 @@ class CreateForm extends React.Component {
                             case "text":
                                 return <FormComponent key={index} name={field.name} help={field.help} id={field.id}
                                     type={field.type} placeholder={field.placeholder} event={this.submit} required={field.required} />;
+                            case "password":
+                                        return <FormComponent key={index} name={field.name} help={field.help} id={field.id}
+                                            type={field.type} placeholder={field.placeholder} event={this.submit} required={field.required} />;
                             case "checkbox":
                                 return <FormCheckbox key={index} id={field.id} value={field.value} event={this.submit} name={field.name} type="checkbox"/>;
                             case "radio":
