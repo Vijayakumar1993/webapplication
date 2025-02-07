@@ -31,6 +31,10 @@
 {
     padding-top: 4px;
 }
+.padding-top-10px
+{
+    padding-top: 10px;
+}
 .margin-top-10{
     margin-top: 10%;
 }
@@ -108,9 +112,15 @@ body {
 }
 
 .nav-link{
-    border-right: 1px solid !important;
+    border-top: 1px solid !important;
+    border-bottom: 1px solid !important;
     color: #2c2c68 !important;
+    border-radius: 0px !important;
 }
+.active {
+    width: 100% !important;
+}
+
 .table{
     border: 1px solid !important;
 }

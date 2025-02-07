@@ -15,13 +15,9 @@ export const LOGIN_FIELDS = [
 ]
 export const MENU_ITEMS = [
     { name: 'Dashboard', link: '/dashboard', icon: 'bi bi-justify' },
-    {
-        name: 'Manage Teams', link: '/fan-zone', submenu: [{
-            name: 'Create Team', link: '/createTeam'
-        }]
-    },
+    {name: 'Manage Teams', link: '/createTeam'},
     { name: 'Manage Players', link: '/managePlayers' },
-    { name: 'Schedules', link: '/about' },
+    { name: 'Schedules', link: '/schedule' },
     { name: 'Reports', link: '/contact' },
     { name: 'Settings', link: '/settings' },
     { name: 'Announcements ', link: '/contact' },
@@ -246,4 +242,20 @@ export const SEARCH_TEAM = [
         values: ["vijayakumar","javan","mahesh","kathir"],
         placeholder: "Please Enter Team name",
     }
+]
+export const CREATE_EVENT = [
+    {
+        name: "Event Name",
+        type: "text",
+        id: "eventName",
+        required: true,
+        placeholder: "Please Enter Team name",
+    }, {
+        name: "Team Members",
+        type: "autocomplete",
+        id: "teamName",
+        required: true,
+        values: ["vijayakumar","javan","mahesh","kathir"],
+        placeholder: "Please Enter Team name",
+    },
 ]

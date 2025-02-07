@@ -42,7 +42,6 @@ function TeamCreation(props) {
     </>
     return (<div className="justify-content-center align-items-center vh-100">
         <Panel heading={heds} body={createTeam} />&nbsp;
-        <Table heading={heading} rows={rows} title="Customer Requests" />
     </div>
     )
 }
@@ -65,7 +64,6 @@ function TeamDelete(props) {
     </>
     return (<div className="justify-content-center align-items-center vh-100">
         <Panel heading={heds} body={deleteTeam} />&nbsp;
-        <Table heading={heading} rows={rows} title="Customer Requests" />
     </div>
     )
 }

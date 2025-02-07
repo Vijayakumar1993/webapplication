@@ -5,7 +5,7 @@ export default function Tabs({ fields }) {
         <div className="d-flex">
             {/* Left-side vertical navbar */}
             <ul className="nav nav-pills flex-column me-3" id="pills-tab" role="tablist">
-                {fields.map(field => (
+                {fields.map((field,index) => (
                     <li className="nav-item" role="presentation" key={field.id}>
                         <button 
                             className="nav-link" 

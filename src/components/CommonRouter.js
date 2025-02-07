@@ -7,6 +7,7 @@ import Setting from "../business/Settings";
 import Fatel from './Fatel';
 import Login from "./Login";
 import ViewPerson from "../business/Viewperson";
+import Schedule from "../business/Schedule";
 import ManagePlayer from "../business/ManagePlayers";
 
 class CommonRouter extends React.Component {
@@ -25,6 +26,7 @@ class CommonRouter extends React.Component {
                     <Route path="/settings" Component={Setting} />
                     <Route path="/logout" Component={Login} />
                     <Route path="/view/:value" Component={ViewPerson} />
+                    <Route path="/schedule" Component={Schedule} />
                     <Route path="/managePlayers" Component={ManagePlayer} />
                     <Route path="*" Component={Fatel} />
                 </Routes>

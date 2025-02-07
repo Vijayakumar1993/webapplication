@@ -30,8 +30,8 @@ class CreateForm extends React.Component {
                                 case "label":
                                     return (
                                         <div className="row padding-10px">
-                                            <div className="col-md-2"><label className="fw-semibold">{field.name}:</label> </div>
-                                            <div className="col-md-6"><span >{field.value}</span></div>
+                                            <div className="col-md-2"><label className="fw-semibold">{field.name}</label> </div>
+                                            <div className="col-md-6"><span >: {field.value}</span></div>
                                         </div>
                                     )
                                 case "text":
@@ -50,7 +50,7 @@ class CreateForm extends React.Component {
                             }
                         })}
                     </div>
-                    <div className="col-md-12 ">
+                    <div className="col-md-12 padding-top-10px">
                         <span className="padding-right-4px padding-top-4px "><button className="btn btn-sm btn-success" onClick={() => this.onSubmit()}>Submit</button></span>
                         <span className="padding-right-4px "><button className="btn btn-sm btn-primary">Reset</button></span>
                     </div>
