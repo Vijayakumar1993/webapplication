@@ -1,25 +1,24 @@
 import React from "react";
-import { TextField } from "./Widgets.js";
-import { TABLE_SIZE } from '../../data/static.js'
+import { TABLE_SIZE } from '../../data/static.js';
+import { FormCheckbox } from "./FromGroup.js";
 
 export default class Table extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { rows: this.props.rows, heading: this.props.heading, pagination: new Pagination(1,0, TABLE_SIZE) }
-
+        this.state = { title: this.props.title, rows: this.props.rows, heading: this.props.heading, pagination: new Pagination(1, 0, TABLE_SIZE) }
     }
     toEnd() {
         var pagination = this.state.pagination;
         var rowsLength = this.state.rows.length
-        if(pagination.to >= rowsLength) return;
-        pagination.index = parseInt(parseInt(rowsLength/10)+1)
-        pagination.from = parseInt(rowsLength/10) * TABLE_SIZE
+        if (pagination.to >= rowsLength) return;
+        pagination.index = parseInt(parseInt(rowsLength / 10) + 1)
+        pagination.from = parseInt(rowsLength / 10) * TABLE_SIZE
         pagination.to = rowsLength
         this.setState({ pagination: pagination })
     }
     toStart() {
         var pagination = this.state.pagination;
-        if(pagination.from <=0) return;
+        if (pagination.from <= 0) return;
         pagination.index = 1
         pagination.from = 0
         pagination.to = TABLE_SIZE
@@ -28,17 +27,17 @@ export default class Table extends React.Component {
     next() {
         var pagination = this.state.pagination;
         var rowsLength = this.state.rows.length
-        if(pagination.to >= rowsLength) return;
-        pagination.index = parseInt(parseInt(pagination.index)+1)
+        if (pagination.to >= rowsLength) return;
+        pagination.index = parseInt(parseInt(pagination.index) + 1)
         pagination.from = parseInt(pagination.to)
         pagination.to = parseInt(pagination.to) + TABLE_SIZE
         this.setState({ pagination: pagination })
     }
     prev() {
         var pagination = this.state.pagination;
-        if(pagination.from <=0) return;
+        if (pagination.from <= 0) return;
         var initFrom = pagination.from
-        pagination.index = parseInt(parseInt(pagination.index)-1)
+        pagination.index = parseInt(parseInt(pagination.index) - 1)
         pagination.from = parseInt(pagination.from) - TABLE_SIZE
         pagination.to = parseInt(initFrom)
         this.setState({ pagination: pagination })
@@ -47,12 +46,12 @@ export default class Table extends React.Component {
     onPageNumChange(event) {
         const target = parseInt(event.target.value); // Get the entered value
         if (isNaN(target) || target < 1) return; // Validate input (positive integers only)
-    
+
         const rowsLength = this.state.rows.length; // Total rows
         const maxPage = Math.ceil(rowsLength / TABLE_SIZE); // Calculate maximum pages
-    
+
         if (target > maxPage) return; // Prevent navigation beyond the last page
-    
+
         const pagination = this.state.pagination;
         pagination.index = target; // Update the current page index
         pagination.from = (target - 1) * TABLE_SIZE; // Calculate the starting index
@@ -61,18 +60,19 @@ export default class Table extends React.Component {
     }
 
     render() {
-        var { heading, rows, pagination } = this.state;
-        var colspan = parseInt(heading.length/2)
+        var { heading, rows, pagination, title } = this.state;
+        var colspan = parseInt(heading.length / 2) + 1
         rows = rows.filter((r, index) => pagination.from <= index && pagination.to > index)
         return (
-            <><div className="container mt-4 padding-left-35px padding-right-35px">
+            <><div className="">
                 <table className="table table-hover table-sm table-responsive">
                     <thead className="thead-dark">
+                        <TableHeader rows={heading} title={title} handleSubmit={() => this.props.handleSubmit} />
                         <TabelHeading rows={heading} />
                     </thead>
                     <tbody>
                         {rows.map((row, index) => {
-                            return <TableRow index={index} row={row} />
+                            return <TableRow index={index} row={row} handleCheck={() => this.props.handleCheck(row)} handleUncheck={() => this.props.handleUncheck(row)} />
                         })}
                     </tbody>
                     <tfoot class="table-light">
@@ -85,8 +85,8 @@ export default class Table extends React.Component {
                                     <button className="padding btn header btn-sm" onClick={() => this.toStart()}>&nbsp;&lt;&lt;&nbsp;</button>
                                 </span>
                                 <span className="padding">
-                                    <button className="padding btn header btn-sm"  onClick={() => this.prev()}>&nbsp;&lt;&nbsp;</button>
-                                </span> <input type="text" placeholder="Page No?" value={pagination.index}  onChange={(event) => this.onPageNumChange(event)} />
+                                    <button className="padding btn header btn-sm" onClick={() => this.prev()}>&nbsp;&lt;&nbsp;</button>
+                                </span> <input type="text" placeholder="Page No?" value={pagination.index} onChange={(event) => this.onPageNumChange(event)} />
                                 <span className="padding">
                                     <button className="padding btn header btn-sm" onClick={() => this.next()}>&nbsp;&gt;&nbsp;</button>
                                 </span>
@@ -103,6 +103,26 @@ export default class Table extends React.Component {
     }
 }
 
+function TableHeader({ rows, title, handleSubmit }) {
+    return (
+        <tr>
+            <th className="header" colSpan={rows.length + 1}>
+                <div className="row">
+                    <div className="col-md-10">
+                        {title.toUpperCase()}
+                    </div>
+                    <div className="col-md-2 text-end">
+                        <select onChange={handleSubmit()}  class="form-select  form-select-sm" >
+                            <option value="-">-</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    )
+}
 function TabelHeading(props) {
     return (
         <tr>
@@ -124,7 +144,7 @@ function TableRow(props) {
 }
 
 class Pagination {
-    constructor(index,from, to) {
+    constructor(index, from, to) {
         this.index = index;
         this.from = from;
         this.to = to;

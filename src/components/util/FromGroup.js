@@ -13,13 +13,13 @@ export class FormComponent extends React.Component  {
 
     render() {
         console.log("Re-render triggered...!")
-        const { type, name, id, placeholder, help, event } = this.props;
+        const { type, name, id, placeholder, help, event,value } = this.props;
         const {valid} = this.state;
         console.log(valid)
         return (
             <div className="form-group padding-bottom-ten container-fluid ">
                 <label htmlFor={name} className="fw-semibold">{name} {valid  && <b className="danger">*</b>}</label>
-                <input type={type} onChange={ev=>{validate(ev,this);event(ev)}} className="form-control form-control-sm" id={id} aria-describedby="emailHelp" placeholder={placeholder} />
+                <input type={type} value={value} onChange={ev=>{validate(ev,this);event(ev)}} className="form-control form-control-sm" id={id} aria-describedby="emailHelp" placeholder={placeholder} />
                 <small id="emailHelp" className="form-text text-muted">{help || ""}</small>
                 {valid && <small id="emailHelp" className="danger form-text text-muted">{name} is required.</small>}
             </div>
@@ -35,7 +35,7 @@ export class FormCheckbox extends React.Component {
     render() {
         return (
             <div className="form-check padding-bottom-ten container-fluid ">
-                <input className="form-check-input" onChange={this.props.event} type={this.props.type} name={this.props.name} value={this.props.value} id={this.props.id} />
+                <input className="form-check-input" onChange={this.props.event} type={this.props.type} name={this.props.name} value={this.props.value} id={this.props.id} checked={this.props.check} />
                 <label className="form-check-label" for={this.props.id}>
                     {this.props.value}
                 </label>

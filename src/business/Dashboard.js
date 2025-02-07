@@ -1,6 +1,7 @@
 import React from "react";
 import CommonNavbar from "../components/util/NavigationBar";
 import Autocomplete from "../components/util/AutoComplete";
+import LeftNavigationBar from "../components/util/LeftNavigationBar";
 
 export default class Dashboard extends React.Component{
     constructor(){

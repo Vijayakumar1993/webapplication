@@ -1,6 +1,7 @@
 import React from 'react';
 import { MENU_ITEMS, COMPANY } from '../../data/static.js';
 import { Link } from 'react-router-dom';
+import LeftNavigationBar from './LeftNavigationBar.js';
 
 export default class CommonNavbar extends React.Component {
     constructor(props) {
@@ -9,14 +10,14 @@ export default class CommonNavbar extends React.Component {
 
     render() {
         const menus = MENU_ITEMS;
-
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
                 <div className="container-fluid">
-                    {/* Brand Name */}
-                    <Link className="navbar-brand" to="/">{COMPANY.name}</Link>
-
-                    {/* Toggler for Mobile View */}
+                  {/* <button className="btn m-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>  */}
+                    <Link className="navbar-brand" to="/">
+                        <h3> {COMPANY.name}</h3></Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -34,7 +35,7 @@ export default class CommonNavbar extends React.Component {
                         <ul className="navbar-nav">
                             {menus.map((item, index) => {
                                 if (item.submenu) {
-                                   return <li className="nav-item dropdown" key={index}>
+                                    return <li className="nav-item dropdown" key={index}>
                                         <a
                                             className="nav-link dropdown-toggle"
                                             href="#"
